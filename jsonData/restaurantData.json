@@ -1,0 +1,256 @@
+[{
+            
+    "name": "Bon Pizza Restaurant",
+    "cuisine": [
+        "Italian","Indian"
+    ],
+    "address": "123 Main Street ",
+    "city": "Guna",
+    "menu":[
+        {
+            "name": "Margherita Pizza",
+            "price": 1099,
+            "description": "Traditional Italian pizza with tomato, mozzarella, and basil.",
+            "isVeg": "Veg"
+            
+        },
+        {
+            "name": "Paneer Kohlapuri",
+            "price": 900,
+            "description": " Paneer Kolhapuri Recipe (Cottage Cheese In Coconut Based Gravy) is a Maharashtrian recipe which uses authentic Kolhapuri Masala to make the gravy with cashewnuts, onions, ginger garlic paste, and tomatoes..",
+            "isVeg": "veg"
+            
+        },
+        {
+            "name": " Spaghetti Pasta",
+            "price": 505,
+            "description": " spaghetti consists of long, thin noodles which can be paired with a wide variety of sauces. ...",
+            "isVeg": "Veg"
+
+        },
+        {
+            "name": " pepperoni pizza",
+            "price": 1200,
+            "description": "pepperoni pizza includes paprika, garlic, black pepper, crushed red pepper, cayenne ..",
+            "isVeg": "Non Veg"
+
+        }
+    ],
+    "averageRating": 4.7,
+    "reviews": []
+},
+{
+            
+    "name": "Jain Shree Restaurant",
+    "cuisine": [
+        "Indian","Italian"
+    ],
+    "address": "170 local Street",
+    "city": "Guna",
+    "menu":[
+        {
+            "name": "Paneer Kohlapuri",
+            "price": 900,
+            "description": " Paneer Kolhapuri Recipe (Cottage Cheese In Coconut Based Gravy) is a Maharashtrian recipe which uses authentic Kolhapuri Masala to make the gravy with cashewnuts, onions, ginger garlic paste, and tomatoes..",
+            "isVeg": "veg"
+            
+        },
+        {
+            "name": "Makhmali Kofte",
+            "price": 209,
+            "description": "A rich gravy made of khus khus, coconut and milk that tastes best with koftas made from khoya. This velvety and creamy recipe will leave you licking your fingers.",
+            "isVeg": "veg"
+
+        },
+        {
+            "name": "Margherita Pizza",
+            "price": 1099,
+            "description": "Traditional Italian pizza with tomato, mozzarella, and basil.",
+            "isVeg": "veg"
+            
+        },
+        {
+            "name": "Butter Chicken",
+            "price": 1200,
+            "description": "Butter chicken is a hot favourite with most Indian non-vegetarians. The quintessential chicken curry has become popular around the world",
+            "isVeg": "Non Veg"
+
+        }
+    ],
+    "averageRating": 3.5,
+    "reviews": []
+},
+
+{
+            
+    "name": "Plate &  Pint Restaurant",
+    "cuisine": [
+        "French","Italian"
+    ],
+    "address": "101 deshai Marg Mumbai",
+    "city": "Mumbai",
+    "menu":[
+        {
+            "name": "POTATOES DAUPHINOISE",
+            "price": 9000,
+            "description": "Out of all the ways to cook potato, this is one of the best. Potato + cream + cheese with a hint of garlic and thyme. Seriously, what could be better than that",
+            "isVeg": " Non Veg"
+            
+        },
+        {
+            "name": "CHICKEN CORDON BLEU",
+            "price": 2099,
+            "description": "All the flavor and sophistication from a classic Chicken Cordon Bleu in a healthier baked version. I’m drooling just by thinking of it!",
+            "isVeg": "Non Veg"
+
+        },
+        {
+            "name": " Spaghetti Pasta",
+            "price": 505,
+            "description": " spaghetti consists of long, thin noodles which can be paired with a wide variety of sauces. ...",
+            "isVeg": "Veg"
+
+        },
+        {
+            "name": "MOUSSE AU CHOCOLAT",
+            "price": 12000,
+            "description": "The ultimate French dessert is definitely Mousse au Chocolat, or Chocolate Mousse. Simple yet sophisticated, airy as a cloud but also rich and intense. Everybody should know how to make a killer mousse!",
+            "isVeg": "Veg"
+
+        }
+    ],
+    "averageRating": 2.5,
+    "reviews": []
+},
+
+
+{
+            
+    "name": "Hong Kong Chinese Restaurant",
+    "cuisine": [
+        "Chinese","French"
+    ],
+    "address": "101 deshai Marg Indore",
+    "city": "Indore",
+    "menu":[
+        {
+            "name": "Sweet and Sour Pork",
+            "price": 450,
+            "description": "Sweet and sour pork is a staple dish enjoyed in Western China that is also often found in Chinese restaurants around the world. This dish is constructed around its main ingredient, deep-fried pork.",
+            "isVeg": "Veg"
+            
+        },
+        {
+            "name": "Mapo Tofu",
+            "price": 2055,
+            "description": "All the flavor and sophistication from a classic Chicken Cordon Bleu in a healthier baked version. I’m drooling just by thinking of it!",
+            "isVeg": "Non Veg"
+
+        },
+        {
+            "name": "Chow Mein",
+            "price": 500,
+            "description": " Chow mein is not only one of the most popular dishes in China, but it has also become a signature dish at Chinese restaurants all around the world. With stir-fried noodles,",
+            "isVeg": "Veg"
+
+        },
+        {
+            "name": "CHICKEN CORDON BLEU",
+            "price": 2099,
+            "description": "All the flavor and sophistication from a classic Chicken Cordon Bleu in a healthier baked version. I’m drooling just by thinking of it!",
+            "isVeg": "Non Veg"
+
+        }
+    ],
+    "averageRating": 1.5,
+    "reviews": []
+},
+
+
+{
+            
+    "name": "Rim Naam Thai Restaurant",
+    "cuisine": [
+        "Thai", "Chinese"
+    ],
+    "address": "702 Nehru Marg Pune",
+    "city": "Pune",
+    "menu":[
+        {
+            "name": "Tom Yum Goong",
+            "price": 1050,
+            "description":"One of Thailand’s most iconic dishes, this popular soup is a spicy, sour and aromatic tastebud extravaganza! Hailing from the central region, the unique flavors of this piquant clear soup derives from the marriage of fragrant lemongrass, shallots, fish sauce, galangal, mushrooms, kaffir lime leaves, lime juice",
+            "isVeg": "Non Veg"
+            
+        },
+        {
+            "name": "Khao Soi",
+            "price": 101,
+            "description": "Noodle soups are a popular street food dish, served any time of day or night across Thailand. One of the best loved varieties is Khao Soi (or Soy), a signature Northern Thailand dish, especially revered in Chiang Mai.",
+            "isVeg": "Non Veg"
+
+        },
+        {
+            "name": "Chow Mein",
+            "price": 500,
+            "description": " Chow mein is not only one of the most popular dishes in China, but it has also become a signature dish at Chinese restaurants all around the world. With stir-fried noodles,",
+            "isVeg": "Veg"
+
+        },
+        {
+            "name": "Som Tam ",
+            "price": 800,
+            "description": "Arguably Thailand’s best-known salad dishes, Som Tam is thought to have originated in Laos, but now stands as a yummy north-eastern specialty and amongst Thailand’s most beloved dishes. Not your typical salad, Som Tam comes in various guises.",
+            "isVeg": "Non Veg"
+
+        }
+    ],
+    "averageRating": 4,
+    "reviews": []
+}
+,
+
+
+{
+            
+    "name": "Tacos Ressstaurant",
+    "cuisine": [
+        "Mexican", "Thai"
+    ],
+    "address": "101 Aradhya  Marg Banglore",
+    "city": "Banglore",
+    "menu":[
+        {
+            "name": "Tom Yum Goong",
+            "price": 1050,
+            "description":"One of Thailand’s most iconic dishes, this popular soup is a spicy, sour and aromatic tastebud extravaganza! Hailing from the central region, the unique flavors of this piquant clear soup derives from the marriage of fragrant lemongrass, shallots, fish sauce, galangal, mushrooms, kaffir lime leaves, lime juice",
+            "isVeg": "Non Veg"
+            
+        },
+        {
+            "name": "Huevos Rancheros",
+            "price": 1011,
+            "description": "It´s made with two fried corn tortillas, topped with fried beans, and two sunny side up eggs all bathed in red hot sauce and decorated with coriander and freshly ground black pepper",
+            "isVeg": "Non Veg"
+
+        },
+        {
+            "name": "Machaca",
+            "price": 5000,
+            "description": "Machaca is very versatile; you can either eat it in a taco, a stuffed burrito, flautas, or just as a stew with some tortillas, beans, or rice on the side.",
+            "isVeg": "Veg"
+
+        },
+        {
+            "name": "Burritos",
+            "price": 8000,
+            "description": "This is very popular on the northern side of México, especially the states bordering the United States. A burrito is a cylindrically rolled flour tortilla stuffed with different ingredients of choice, often a stew.",
+            "isVeg": "Non Veg"
+
+        }
+    ],
+    "averageRating": 4,
+    "reviews": []
+}
+
+]
