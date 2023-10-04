@@ -306,9 +306,7 @@ async function findRestaurantByLocation(title) {
 
 
       if (movie) {
-        const dishItem =  movie.menu.pull(dishId)
-        console.log(dishItem)
-        
+        const dishItem =  movie.menu.pull(dishId)        
         await movie.save()
         return movie
       }
