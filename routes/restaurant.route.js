@@ -252,27 +252,25 @@ async function findRestaurantByLocation(title) {
     
 
 
-
+//  ADD NEW DISH TO MENU
  
- async function addRatingAndReview(movieId, userId, rating, reviewText) {
+ async function addNewDIsh(restaurantId,  dishDetail) {
     try {
-      const movie = await movieModel.findById(movieId);
-      console.log({ movie })
-      if (movie) {
-        movie.ratings.push(rating);
+      const restaurant = await restaurantModel.findById(restaurantId);
+      console.log({ restaurant })
+      const newArr ={
+        name: dishDetail.name,
+        price: dishDetail.price,
+        description: dishDetail.description ? dishDetail.description : "Not Available",
+        isVeg:dishDetail.isVeg ? dishDetail.isVeg : "Not Available"
+    }
+      if (restaurant) {
+        restaurant.menu.push(newArr);
   
-        const review = {
-          user: userId,
-          text: reviewText,
-        };
-        movie.reviews.push(review);
-  
-        await movie.save();
-  
-        const updatedMovieWithReview = await movieModel.findById(movieId).populate('reviews.user', 'username profilePictureUrl');
-        return updatedMovieWithReview;
+        await restaurant.save();
+        return  restaurant
       } else {
-        throw new Error("Movie not found");
+        throw new Error("restaurant not found");
       }
     } catch (error) {
       throw error;
@@ -280,45 +278,58 @@ async function findRestaurantByLocation(title) {
   }
 
 
+
+
+    restaurentRouter.post('/add-dish/:restaurantId', async (req, res) => {
+      console.log("ashu")
+      try {
+        const paramId = req.params.restaurantId
+        console.log(paramId)
+        const dishDetail = req.body
   
-  restaurentRouter.post('/:movieId/reviews', async (req, res) => {
+        const findAllRestaurant = await addNewDIsh( paramId,dishDetail );
+        res.json({findAllRestaurant  });
+      } catch (error) {
+        res.status(404).json({ error: 'restaurant not available' });
+      }
+    });
+  
+
+
+
+//  delete dish from menu
+
+  
+  async function deleteDishFromMenu(restaurantId,dishId) {
     try {
-      const movieId = req.params.movieId;
-      const { userId, rating, review } = req.body;
-  
-      const updatedMovie = await addRatingAndReview(movieId, userId, rating, review);
-      res.json(updatedMovie);
-    } catch (error) {
-      res.status(404).json({ error: 'Movie not found' });
-    }
-  });
-  
-  async function getMovieReviewsWithUserDetails(movieId) {
-    try {
-      const movie = await movieModel.findById(movieId).populate({
-        path: 'reviews',
-        populate: {
-  
-          path: 'user', select: 'username profilePictureUrl'
-        },
-      });
-      const reviewsWithUserDetails = movie.reviews.slice(0, 3).map(review => ({
-        reviewText: review.text,
-        user: review.user,
-      }));
-      return reviewsWithUserDetails;
+      const movie = await restaurantModel.findById(restaurantId);
+
+
+      if (movie) {
+        const dishItem =  movie.menu.pull(dishId)
+        console.log(dishItem)
+        
+        await movie.save()
+        return movie
+      }
+
     } catch (error) {
       throw error;
     }
   }
   
-  restaurentRouter.get('/:movieId/reviews', async (req, res) => {
+  restaurentRouter.post('/delete/menu/:restaurantId/:dishId', async (req, res) => {
     try {
-      const movieId = req.params.movieId;
-      const reviewsWithUserDetails = await getMovieReviewsWithUserDetails(movieId);
-      res.json(reviewsWithUserDetails);
+      const restaurantId = req.params.restaurantId;
+      const dishId = req.params.dishId;
+      console.log(dishId)
+      console.log(restaurantId)
+
+
+      const movieAfterDeletingDish = await deleteDishFromMenu(restaurantId,dishId);
+      res.json(movieAfterDeletingDish);
     } catch (error) {
-      res.status(404).json({ error: 'Movie not found' });
+      res.status(404).json({ error: 'restaurent or dish not found' });
     }
   });
 
