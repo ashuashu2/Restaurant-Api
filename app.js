@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 const PORT =  process.env.PORT || 3000;
 const connectDB = require("./db/db.connection");
-const restaurentRouter = require("./routes/restaurant.route")
+const restaurentRouter = require("./routes/restaurant.route");
+const globalErrorHandlerMiddleware = require("./middlewares/global.errorHandler")
+const routesNotFoundMiddleware = require("./middlewares/routes.notFound")
+
 
 
 app.use(express.json())
@@ -21,6 +24,8 @@ app.get("/",(req,res)=>{
 
 
 app.use("/restaurant",restaurentRouter)
+app.use(routesNotFoundMiddleware)
+app.use(globalErrorHandlerMiddleware)
 
 const start = async()=>{
     try {
