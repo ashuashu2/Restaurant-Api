@@ -358,7 +358,7 @@ async function findRestaurantByLocation(title) {
     try {
       const restaurant = await restaurantModel.findByIdAndUpdate( id ,restaurantDetails,{ new: true} );
       if (restaurant) {
-        const updatedrestaurant = await restaurant.save();
+        const updatedrestaurant =  restaurant.save();
         console.log(updatedrestaurant)
         return updatedrestaurant;
       } else {
@@ -368,7 +368,7 @@ async function findRestaurantByLocation(title) {
       throw error;
     }
   }
-  // updateRestaurantDetails("65197377f1efded0eb25443c", {averageRating: 4.5 })
+  // updateRestaurantDetails("65197377f1efded0eb254450",{averageRating: 2.7})
   
   restaurentRouter.post('/update-details/:id', async (req, res) => {
     try {
@@ -376,6 +376,7 @@ async function findRestaurantByLocation(title) {
       const restaurantDetails = req.body;
       console.log(restaurantDetails)
       const updatedRestaurant = await updateRestaurantDetails(id, restaurantDetails);
+      console.log(updatedRestaurant)
       res.json(updatedRestaurant);
     } catch (error) {
       res.status(404).json({ error: 'restaurant not updated' });
