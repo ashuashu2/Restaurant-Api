@@ -434,28 +434,28 @@ async function deleteRestaurantHandler(id) {
 
 
 
-// async function getRestaurantReviewsWithUserDetails(restaurantId) {
-//   try {
-//     const restaurant = await restaurantModel.findById(restaurantId)
-//     const reviewsWithUserDetails = restaurant.reviews.slice(0, 3).map(review => ({
-//       reviewText: review.text,
-//       user: review.user,
-//     }));
-//     return reviewsWithUserDetails;
-//   } catch (error) {
-//     throw error;
-//   }
-// }
+async function getRestaurantReviewsWithUserDetails(restaurantId) {
+  try {
+    const restaurant = await restaurantModel.findById(restaurantId)
+    const reviewsWithUserDetails = restaurant.reviews.slice(0, 3).map(review => ({
+      reviewText: review.text,
+      user: review.user,
+    }));
+    return reviewsWithUserDetails;
+  } catch (error) {
+    throw error;
+  }
+}
 
-// restaurentRouter.get('/:restaurantId/reviews', async (req, res) => {
-//   try {
-//     const restaurantId = req.params.restaurantId;
-//     const reviewsWithUserDetails = await getRestaurantReviewsWithUserDetails(restaurantId);
-//     res.json(reviewsWithUserDetails);
-//   } catch (error) {
-//     res.status(404).json({ error: 'restaurant not found' });
-//   }
-// });
+restaurentRouter.get('/:restaurantId/reviews', async (req, res) => {
+  try {
+    const restaurantId = req.params.restaurantId;
+    const reviewsWithUserDetails = await getRestaurantReviewsWithUserDetails(restaurantId);
+    res.json(reviewsWithUserDetails);
+  } catch (error) {
+    res.status(404).json({ error: 'restaurant not found' });
+  }
+});
 
 
 
@@ -492,7 +492,7 @@ restaurentRouter.post('/:restaurantId/reviews', async (req, res) => {
 
 
 
-    const updatedRestaurant = await addRatingAndReview(restaurantId, userId, rating, review);
+    const updatedRestaurant = await addRatingAndReview(restaurantId, userId, rating, review); 
 
     res.json(updatedRestaurant);
   } catch (error) {
