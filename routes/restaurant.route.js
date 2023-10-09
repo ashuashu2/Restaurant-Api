@@ -350,7 +350,7 @@ async function findRestaurantByLocation(title) {
 
 
 
-//   update restaurant by title
+//   update restaurant by Id
 
 
 
