@@ -368,7 +368,6 @@ async function findRestaurantByLocation(title) {
       throw error;
     }
   }
-  // updateRestaurantDetails("65197377f1efded0eb254450",{averageRating: 2.7})
   
   restaurentRouter.post('/update-details/:id', async (req, res) => {
     try {
@@ -389,29 +388,29 @@ async function findRestaurantByLocation(title) {
 
 
 
-// async function deleteRestaurantHandler(id) {
-//     try {
-//       const restaurant = await restaurantModel.findByIdAndDelete(id);
-//       console.log({restaurant})
-//      const availableRestaurants = await restaurantModel.find({})
+async function deleteRestaurantHandler(id) {
+    try {
+      const restaurant = await restaurantModel.findByIdAndDelete(id);
+      console.log({restaurant})
+     const availableRestaurants = await restaurantModel.find({})
        
        
-//         return availableRestaurants;
+        return availableRestaurants;
       
-//     } catch (error) {
-//       throw error;
-//     }
-//   }
+    } catch (error) {
+      throw error;
+    }
+  }
   
-//   restaurentRouter.delete('/delete/:id', async (req, res) => {
-//     try {
-//       const id = req.params.id;
-//       const availableRestaurant = await deleteRestaurantHandler(id);
-//       res.json({availableRestaurant, totle: availableRestaurant.length});
-//     } catch (error) {
-//       res.status(404).json({ error: 'movie not updated' });
-//     }
-//   });
+  restaurentRouter.delete('/delete/:id', async (req, res) => {
+    try {
+      const id = req.params.id;
+      const availableRestaurant = await deleteRestaurantHandler(id);
+      res.json({availableRestaurant, totle: availableRestaurant.length});
+    } catch (error) {
+      res.status(404).json({ error: 'movie not updated' });
+    }
+  });
 
 
 
@@ -421,7 +420,7 @@ async function findRestaurantByLocation(title) {
 
 
 
-// //  addd reviews and rating to restaurant
+//  addd reviews and rating to restaurant
 
 
 
@@ -429,46 +428,6 @@ async function findRestaurantByLocation(title) {
 
 
 
-// async function addRatingAndReview(restaurantId, userId, rating, reviewText) {
-//   try {
-//     const restaurant = await restaurantModel.findById(restaurantId);
-
-//     if (restaurant) {
-//       restaurant.ratings.push(rating);
-
-//       const review = {
-//         user: userId,
-//         text: reviewText,
-//       };
-//       restaurant.reviews.push(review);
-
-//       await restaurant.save();
-      
-
-//       const updatedRestaurantWithReview = await restaurantModel.findById(restaurantId)
-//       return updatedRestaurantWithReview;
-//     } 
-//   } catch (error) {
-//     throw error;
-//   }
-// }
-
-
-
-// restaurentRouter.post('/:restaurantId/reviews', async (req, res) => {
-//   try {
-//     const restaurantId = req.params.restaurantId;
-//     const { userId, rating, review } = req.body;
-
-
-
-//     const updatedRestaurant = await addRatingAndReview(restaurantId, userId, rating, review);
-
-//     res.json(updatedRestaurant);
-//   } catch (error) {
-//     res.status(404).json({ error: 'restaurant not found' });
-//   }
-// });
 
 
 
@@ -499,6 +458,47 @@ async function findRestaurantByLocation(title) {
 // });
 
 
+
+async function addRatingAndReview(restaurantId, userId, rating, reviewText) {
+  try {
+    const restaurant = await restaurantModel.findById(restaurantId);
+
+    if (restaurant) {
+      restaurant.ratings.push(rating);
+
+      const review = {
+        user: userId,
+        text: reviewText,
+      };
+      restaurant.reviews.push(review);
+
+      await restaurant.save();
+      
+
+      const updatedRestaurantWithReview = await restaurantModel.findById(restaurantId)
+      return updatedRestaurantWithReview;
+    } 
+  } catch (error) {
+    throw error;
+  }
+}
+
+
+
+restaurentRouter.post('/:restaurantId/reviews', async (req, res) => {
+  try {
+    const restaurantId = req.params.restaurantId;
+    const { userId, rating, review } = req.body;
+
+
+
+    const updatedRestaurant = await addRatingAndReview(restaurantId, userId, rating, review);
+
+    res.json(updatedRestaurant);
+  } catch (error) {
+    res.status(404).json({ error: 'restaurant not found' });
+  }
+});
 
 
   module.exports = restaurentRouter
