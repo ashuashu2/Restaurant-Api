@@ -474,13 +474,10 @@ async function addRatingAndReview(restaurantId, userId, rating, reviewText) {
       restaurant.reviews.push(review);
 
       await restaurant.save();
-      console.log(reviewText)
-      console.log(restaurantId)
 
       
 
       const updatedRestaurantWithReview = await restaurantModel.findById(restaurantId)
-      console.log(updateRestaurantDetails)
       return updatedRestaurantWithReview;
     } 
   } catch (error) {
